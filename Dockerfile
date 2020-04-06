@@ -16,4 +16,7 @@ RUN apt install -qy curl unzip
 RUN curl -L https://github.com/Microsoft/dafny/releases/download/v2.3.0/dafny-2.3.0.10506-x64-ubuntu-16.04.zip -o /opt/dafny.zip \
 && (cd /opt && unzip dafny.zip && rm dafny.zip)
 
+# libgompl is needed to run z3
+RUN apt update && apt install -qy libgomp1 
+
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/dafny:/opt/dafny/z3/bin
