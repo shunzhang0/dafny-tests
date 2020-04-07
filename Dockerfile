@@ -19,4 +19,11 @@ RUN curl -L https://github.com/Microsoft/dafny/releases/download/v2.3.0/dafny-2.
 # libgompl is needed to run z3
 RUN apt update && apt install -qy libgomp1 
 
+# add pytest
+RUN pip3 install --upgrade pip
+RUN pip3 install -U pytest
+
+
+RUN pip3 install pipenv
+
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/dafny:/opt/dafny/z3/bin
