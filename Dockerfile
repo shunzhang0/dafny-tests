@@ -2,14 +2,14 @@
 FROM holbertonschool/ubuntu-1804-python37
 
 # install mono for ubuntu 18.04
-RUN apt update
+RUN apt-get update
 RUN apt install -qy gnupg ca-certificates
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 RUN apt install -qy apt-transport-https ca-certificates
 RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" |  tee /etc/apt/sources.list.d/mono-official-stable.list
-RUN apt update
+RUN apt-get update
 
-RUN apt install -qy mono-devel
+RUN apt install -qy mono-complete
 
 # install dafny
 RUN apt install -qy curl unzip
